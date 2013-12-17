@@ -1,0 +1,26 @@
+[user]
+	name = Jennifer Smith
+	email = jennifer@home
+[core]
+	   safecrlf = true
+	   excludesfile = ~/bin/dotfiles/gitignores 
+[alias]
+   co = checkout
+   ci = commit
+   st = status
+   br = branch
+   check = "!git add --all && git commit -a -m checkpoint"
+   fullhashlog = "log --graph --abbrev-commit '--format=format:%H %C(yellow)%ci%Creset %Cgreen%an%Creset | %s'"
+   unpushed = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git log origin/$PROJ_BRANCH..HEAD"
+[color]
+   ui = auto
+[color "status"]
+   added = yellow
+   changed = green
+   untracked = cyan
+[format]
+   pretty = format:"%h %C(yellow)%ci%Creset %Cgreen%an%Creset | %s"
+[push]
+   default = tracking
+[include]
+        path = ~/bin/private-settings/githubconfig
